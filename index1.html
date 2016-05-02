@@ -1,0 +1,106 @@
+<!DOCTYPE html >
+<html lang="en"
+      ng-app="windEnergy" >
+<head >
+	<title>Wind energy</title >
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link href="main.css" rel="stylesheet" >
+	<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+	
+</head >
+<body>
+		<div class="col-md-4" style="float:left"
+		     ng-controller="LocationListController" >
+
+					<table class="table table-bordered" >
+
+						<tr >
+							<th>Click on Location to load place specific FRQ
+							</th >
+						</tr >
+
+						<tr ng-repeat="location in filteredLocations = (info.locations | orderBy:order)"
+						    ng-style="{'background-color': location.place == info.selectedLocation.place ? 'lightgray' : 'white'}"
+						    ng-click="info.selectedLocation = location" >
+							<td >{{ location.place }}</td >
+						</tr >
+
+					</table >
+
+				</div >
+
+		</div >
+		<div class="col-md-8" style="float:right">
+
+			<div ng-controller="LocationDetailController" class="panel panel-default">
+				<div class="panel-heading" >FRQ for ... {{ info.selectedLocation.place }}</div >
+				<div class="panel-body" >
+     		
+						<p ><strong>{{ info.selectedLocation.place }}</strong> is a community consisting of <strong>{{ info.selectedLocation.numhouseholds }}</strong> homes.  A small coal-burning power plant currently supplies electricity for the town.
+						The capacity of the power plant is <strong>{{ info.selectedLocation.coalplantcapacity }}</strong> MN and the average household consumes <strong>{{ info.selectedLocation.avgkwhperhousehold }}</strong> kWh of electricity each year. The price paid to the electric utility by West Fremont residents for this energy is <strong>$ {{ info.selectedLocation.costperkwh }}</strong> per kWh.  The town leaders are considering a plan, the <strong>{{ info.selectedLocation.place }}</strong> Wind Project, to generate their own electricity using <strong>10</strong> wind turbines that would be located on the wooded ridges surrounding the town.  Each wind turbine would have a capacity of <strong>{{ info.selectedLocation.windturbinecapacity }}</strong> MW and each would cost the town <strong>{{ info.selectedLocation.windturbinecost }}</strong> to purchase, finance, and operate for <strong>25</strong> years.</p>
+					
+					<br></br>
+					
+						<p>Assuming that the existing power plant can operate at full capacity 
+						for 8,000 hrs/yr, how many kWh of electricity can be produced by the plant in a year?</p >
+						
+						<div ng-controller="MyCtrl"><!--http://www.w3schools.com/angular/tryit.asp?filename=try_ng_events_toggle-->
+							<button ng-click="myFunc()">Click to Show and Hide!</button>
+						
+							<br></br>
+					
+							<div>
+    							<span ng-show="showMe" mathjax-bind="info.selectedLocation.questionone"></span>
+							</div> <!--http://jsfiddle.net/spicyj/ypqvp/-->
+						
+    				    </div>
+    				    
+    				    
+    				    
+    				    
+    				<br></br>
+					
+						<p>At the current rate of electrical energy use per household, how many kWh of electrical energy does the community consume in one year?</p >
+						
+						<div ng-controller="MyCtrl"><!--http://www.w3schools.com/angular/tryit.asp?filename=try_ng_events_toggle-->
+							<button ng-click="myFunc()">Click to Show and Hide!</button>
+						
+							<br></br>
+					
+							<div>
+    							<span ng-show="showMe" mathjax-bind="info.selectedLocation.questiontwo"></span>
+							</div> <!--http://jsfiddle.net/spicyj/ypqvp/-->
+						
+    				    </div>
+    				    
+    				    <br></br>
+					
+						<p>Assume that the electrical energy needs of the community do not change during the 25 year lifetime of the wind turbines, would would be the cost to the community of the electricity supplied by the {{ info.selectedLocation.place }} Wind Project over 25 years?  Express your answer in dollars/kWh</p >
+						
+						<div ng-controller="MyCtrl"><!--http://www.w3schools.com/angular/tryit.asp?filename=try_ng_events_toggle-->
+							<button ng-click="myFunc()">Click to Show and Hide!</button>
+						
+							<br></br>
+					
+							<div>
+    							<span ng-show="showMe" mathjax-bind="info.selectedLocation.questionthreeA"></span>
+    							<br></br>
+    							<span ng-show="showMe" mathjax-bind="info.selectedLocation.questionthreeB"></span>
+    							<br></br>
+    							<span ng-show="showMe" mathjax-bind="info.selectedLocation.questionthreeC"></span>
+    							
+							</div> <!--http://jsfiddle.net/spicyj/ypqvp/-->
+						
+    				    </div>
+    				    
+			</div >
+		</div >
+</div >
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js" ></script>
+<script src="main.js" ></script>
+
+</body>
+</html >
+

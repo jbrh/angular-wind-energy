@@ -1,0 +1,96 @@
+body {
+  padding-top: 50px;
+}
+
+.main-content {
+  padding: 40px 15px;
+}
+
+.images {
+  
+  max-width: 300px;
+  padding-top: 10px;
+}
+
+.navbar-brand {
+  font-size: 25px;
+}
+
+.panel-heading {
+  font-size: 20px;
+}
+
+dt {
+  line-height: 1.75;
+}
+
+.table-bordered>tbody>tr>th {
+  background-color: white;
+}
+
+.row {
+  
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+dd {
+  padding-left: 7px;
+}
+
+dl {
+  margin-bottom: 0px;
+}
+
+.multicolumn {
+-webkit-column-count: 2;
+-moz-column-count: 2;
+column-count: 2;
+}
+
+.columnbreak {
+  break-after: always;
+}
+
+#reorder {
+  float: right;
+}
+
+#common {
+  width: 250px;
+}
+
+/*#range {
+  margin-left:210px;
+  
+}*/
+
+#rangemap{
+  float: right;
+  height:130px;
+}
+
+/* Angular animations*/
+
+.animate-hide {
+  transition: all linear 0.5s;
+  line-height: 20px;
+  opacity: 1;
+  padding: 10px;
+  border: 1px solid black;
+  background: white;
+}
+
+.animate-hide.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  padding: 0 10px;
+}
+
+.check-element {
+  padding: 10px;
+  border: 1px solid black;
+  background: white;
+}
+
+
